@@ -6,12 +6,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { AddressComponent } from './address/address.component';
 import { SuggestionsComponent } from './suggestions/suggestions.component';
 
-const routes: Routes = [
-	{ path: 'p', component: ProfileComponent },
-	{ path: 'a', component: AddressComponent },
-	{ path: 's', component: SuggestionsComponent }
-
-];
+const routes: Routes = [];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
