@@ -1,0 +1,31 @@
+<div class="container">
+	<div class="row">
+		<div class="col text-center"><h3>Suggestions</h3><hr>
+		</div>
+		<div  class="col text-center"><h3 data-toggle="modal" data-target=".bd-example-modal-sm" (click)="popup()" >Done</h3></div>
+
+	</div>
+	<hr>
+</div>
+
+
+<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content p-5">
+      <h2>Thank You!</h2>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+	<table class="table table-borderless">
+	<tr><th></th><th></th><th></th></tr>
+		<tr  *ngFor="let name of suggest">
+		<td><img height="150" src={{name.src}}></td>
+		<td>{{name.name}}
+		</td>
+		<td><button *ngIf="!name.friend" class="btn btn-success" (click)="friendInfo(name)">Add</button>
+		<button *ngIf="name.friend" class="btn btn-secondary" (click)="friendInfo(name)">Remove</button></td>
+		</tr>
+	</table>
+</div>

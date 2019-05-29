@@ -1,0 +1,67 @@
+<div *ngIf="!suggestions">
+<form [formGroup]="angForm" novalidate>
+<div class="container">
+  <div class="form-group">
+  <br>
+    <label>Country</label>
+    <input type="text" class="form-control op" formControlName="country" #country />
+  </div>
+
+<div *ngIf="angForm.controls['country'].invalid && (angForm.controls['country'].dirty || angForm.controls['country'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['country'].errors.required">
+          Country is required
+        </div>
+      </div>
+
+  <div class="form-group"><br>
+    <label>State</label>
+    <input type="text" class="form-control op" formControlName="state" #state />
+  </div>
+
+<div *ngIf="angForm.controls['state'].invalid && (angForm.controls['state'].dirty || angForm.controls['state'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['state'].errors.required">
+          State is required
+        </div>
+      </div>
+
+  <div class="form-group"><br>
+    <label>City</label>
+    <input type="text" class="form-control op" formControlName="city" #city />
+  </div>
+
+<div *ngIf="angForm.controls['city'].invalid && (angForm.controls['city'].dirty || angForm.controls['city'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['city'].errors.required">
+          City is required
+        </div>
+      </div>
+
+  <div class="form-group"><br>
+    <label>Zip-code</label>
+    <input type="number" class="form-control op" formControlName="zipcode" #zipcode />
+  </div>
+
+  <div *ngIf="angForm.controls['zipcode'].invalid && (angForm.controls['zipcode'].dirty || angForm.controls['zipcode'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['zipcode'].errors.required">
+          Zip-code is required
+        </div>
+      </div>
+
+  <div class="form-group"><br>
+    <label>Geo-code</label>
+    <input type="text" class="form-control op" formControlName="geocode" #geocode />
+  </div>
+
+  <div *ngIf="angForm.controls['geocode'].invalid && (angForm.controls['geocode'].dirty || angForm.controls['geocode'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['geocode'].errors.required">
+         Geo-code is required
+        </div>
+      </div>
+
+</div><br><br>
+		    <button type="submit" [disabled]="angForm.pristine || angForm.invalid" (click)="addressInfo(country.value,state.value,city.value,zipcode.value,geocode.value)" class="btn container-fluid p-4 btn-warning"><h3>Next</h3>
+		    </button>
+</form>
+</div>
+<div *ngIf="suggestions">
+<app-suggestions [addressObj]="AddressObj"></app-suggestions>
+</div>

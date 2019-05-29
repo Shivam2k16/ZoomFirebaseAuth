@@ -1,0 +1,21 @@
+<div *ngIf="logopage" class="logo start">
+<img class="logo" src="assets/icons/polygonal-letter-z-of-small-triangles.svg"><span class="logo-cap logo">ZOOM</span>
+</div>
+<div *ngIf="!logopage&&!profile">
+	<img class="logo2" src="assets/icons/polygonal-letter-z-of-small-triangles.svg"><span class="logo-cap2 logo2">ZOOM</span>
+	<div style="text-align: center; margin-top: 400px;"  >
+	<button mat-raised-button  layout-align="center center" class="row bg-white op"  (click)="signInWithGoogle()">
+	<img height="30" src="assets/icons/icons8-google.svg">
+	      Sign in with Google
+	</button><br>
+	<b>Or</b>
+	<br>
+	<button class="row op" mat-raised-button layout-align="center center"  (click)="signInWithGithub()">
+	   <i class="fa fa-github" style="font-size:30px" aria-hidden="true"></i>
+	      Sign in with Github
+	</button>
+	</div>
+</div>
+<div *ngIf="profile">
+<app-profile></app-profile>
+</div>

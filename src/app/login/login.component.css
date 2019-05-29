@@ -1,0 +1,51 @@
+.logo{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+}
+.start{
+    background-color: yellow;
+    height: 666px;
+}
+.logo-cap{
+    font-size: 70px;text-align: center;margin-top: 32%;
+}
+
+@media only screen and (max-width: 1300px) {
+  .logo-cap{
+    margin-top: 440px;
+}
+}
+
+.logo2{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+    margin-top: 30px;
+}
+.button2{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+    margin-top: 30px;
+}
+.op{
+    box-shadow:  1px 1px 1px 1px #888;
+}
+.logo-cap2{
+    font-size: 70px;text-align: center;margin-top: 18%;
+}
+@media only screen and (max-width: 1300px) {
+  .logo-cap2{
+    margin-top: 240px;
+}
+}

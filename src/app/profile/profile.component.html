@@ -1,0 +1,112 @@
+<div *ngIf="!address">
+<form [formGroup]="angForm" novalidate>
+<div class="container">
+  <div class="form-group">
+    <label>First Name</label>
+    <input type="text" class="form-control op" formControlName="first_name" #first_name />
+  </div>
+
+<div *ngIf="angForm.controls['first_name'].invalid && (angForm.controls['first_name'].dirty || angForm.controls['first_name'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['first_name'].errors.required">
+          First Name is required
+        </div>
+      </div>
+
+  <div class="form-group">
+    <label>Last Name</label>
+    <input type="text" class="form-control op" formControlName="last_name" #last_name />
+  </div>
+
+<div *ngIf="angForm.controls['last_name'].invalid && (angForm.controls['last_name'].dirty || angForm.controls['last_name'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['last_name'].errors.required">
+          Last Name is required
+        </div>
+      </div>
+
+  <div class="form-group">
+    <label>User Name</label>
+    <input type="text" class="form-control op" formControlName="user_name" #user_name />
+  </div>
+
+<div *ngIf="angForm.controls['user_name'].invalid && (angForm.controls['user_name'].dirty || angForm.controls['user_name'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['user_name'].errors.required">
+          Usrname is required
+        </div>
+      </div>
+
+  <div class="form-group">
+    <label>Date of Birth</label>
+    <input type="text" class="form-control op" formControlName="dob" #dob />
+  </div>
+
+  <div *ngIf="angForm.controls['dob'].invalid && (angForm.controls['dob'].dirty || angForm.controls['dob'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['dob'].errors.required">
+          Date of Birth is required
+        </div>
+      </div>
+
+  <div class="form-group">
+    <label>Phone No.</label>
+    <input type="number" class="form-control op" formControlName="phone" #phone />
+  </div>
+
+  <div *ngIf="angForm.controls['phone'].invalid && (angForm.controls['phone'].dirty || angForm.controls['phone'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['phone'].errors.required">
+          Phone No. is required
+        </div>
+      </div>
+  <div class="form-group">
+    <label>Gender</label>
+    <input type="text" class="form-control op" formControlName="gender" #gender />
+  </div>
+
+  <div *ngIf="angForm.controls['gender'].invalid && (angForm.controls['gender'].dirty || angForm.controls['gender'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['gender'].errors.required">
+          Gender is required
+        </div>
+      </div>
+<div class="form-group">
+    <label>Select your Avatar</label>
+    <div class="row">
+    <div class="col">
+      <img height="250" src="assets/icons/girl.svg" (click)="selectedAvatar('assets/icons/girl.svg')">
+    </div>
+    <div class="col">
+      <img height="250" src="assets/icons/girl-1.svg" (click)="selectedAvatar('assets/icons/girl-1.svg')">
+    </div>
+    <div class="col">
+      <img height="250" src="assets/icons/boy.svg" (click)="selectedAvatar('assets/icons/boy.svg')">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <img height="250" src="assets/icons/boy-1.svg" (click)="selectedAvatar('assets/icons/boy-1.svg')">
+    </div>
+    <div class="col">
+      <img height="250" src="assets/icons/man.svg" (click)="selectedAvatar('assets/icons/man.svg')">
+    </div>
+    <div class="col">
+      <img height="250" src="assets/icons/man-2.svg" (click)="selectedAvatar('assets/icons/man-2.svg')">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <img height="250" src="assets/icons/man-1.svg" (click)="selectedAvatar('assets/icons/man-1.svg')">
+    </div>
+    <div class="col">
+      <img height="250" src="assets/icons/man-3.svg" (click)="selectedAvatar('assets/icons/man-3.svg')">
+    </div>
+    <div class="col">
+      <img height="250" src="assets/icons/man-4.svg" (click)="selectedAvatar('assets/icons/man-4.svg')">
+    </div>
+  </div>
+  </div>
+</div>
+		    <button type="submit" [disabled]="angForm.pristine || angForm.invalid" (click)="profileInfo(first_name.value,last_name.value,user_name.value,dob.value,phone.value,gender.value)" class="btn container-fluid p-4 btn-warning"><h3>Next</h3>
+		    </button>
+</form>
+	
+</div>
+<div *ngIf="address">
+<app-address [profileObj]="ProfileObj"></app-address>
+</div>
